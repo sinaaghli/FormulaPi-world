@@ -5,7 +5,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.06170063062751387 -0.9961459317839527 -0.062340314167059645 1.5849715285010215
-  position -1.0648339993284015 0.30762307643107517 -0.0005514903467397518
+  position -1.0910394533649015 0.3109161014884803 -0.0008217824418218431
   follow "FormulaPi"
 }
 TexturedBackground {
@@ -84,7 +84,7 @@ Solid {
         }
         texture ImageTexture {
           url [
-            "/Users/sina/code/webotstest_project/Tags/200.jpg"
+            "../Tags/200.jpg"
           ]
           filtering 0
         }
