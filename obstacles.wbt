@@ -1,0 +1,138 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  basicTimeStep 16
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.056816027030420296 0.9774895499359666 0.2031898590935572 2.577873707095139
+  position 1.201586189674819 1.044059625797112 -1.7267796164187892
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  translation -0.100004 0.08 0.258764
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.199996 0.049803799999999995 0.258764
+  rotation 7.7137784753113625e-19 0.9999999999999999 -1.4251768525694042e-17 0.7853979999999999
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+  mass 1
+}
+E-puck {
+  translation -0.22390976947764044 -3.197317543136326e-05 -0.38646892918795756
+  rotation -0.0008027811088611891 0.9999991922810397 0.0009853830521415448 1.7827162189715358
+  controller "EPuckGoForward"
+}
+Solid {
+  translation 0 0.47 -0.39
+  children [
+    DEF MYBALLSHAPE Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.1
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 0.43 0
+  children [
+    USE MYBALLSHAPE
+  ]
+  name "solid(1)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 0 -0.5
+  children [
+    DEF MYWALL_SHAPE Shape {
+      appearance Appearance {
+        material Material {
+          ambientIntensity 0
+          diffuseColor 1 1 1
+          shininess 0
+        }
+        texture ImageTexture {
+          url [
+            ""
+          ]
+          filtering 0
+        }
+      }
+      geometry Box {
+        size 1 0.1 0.01
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE MYWALL_SHAPE
+}
+Solid {
+  translation 0 0 0.5
+  children [
+    USE MYWALL_SHAPE
+  ]
+  name "solid(3)"
+  boundingObject USE MYWALL_SHAPE
+}
+Solid {
+  translation 0.5 0 0
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    USE MYWALL_SHAPE
+  ]
+  name "solid(4)"
+  boundingObject USE MYWALL_SHAPE
+}
+Solid {
+  translation -0.5 0 0
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    USE MYWALL_SHAPE
+  ]
+  name "solid(5)"
+  boundingObject USE MYWALL_SHAPE
+}
+Solid {
+  translation 0 0.2 0.5
+  children [
+    DEF APRILTAG Shape {
+      appearance Appearance {
+        material Material {
+          ambientIntensity 0
+          diffuseColor 0 0 0
+          shininess 0
+        }
+        texture ImageTexture {
+          url [
+            "/Users/sina/code/webotstest_project/Tags/200.jpg"
+          ]
+          filtering 0
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.001
+      }
+      castShadows FALSE
+      isPickable FALSE
+    }
+  ]
+  name "solid(6)"
+}
